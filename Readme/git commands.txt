@@ -1,0 +1,51 @@
+https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+
+push request :
+
+1) First check if Git credentials are configured in the system
+
+		git config --list                                                                                                                                      diff.astextplain.textconv=astextplain
+		filter.lfs.clean=git-lfs clean -- %f
+		filter.lfs.smudge=git-lfs smudge -- %f
+		filter.lfs.process=git-lfs filter-process
+		filter.lfs.required=true
+		http.sslbackend=openssl
+		http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+		core.autocrlf=true
+		core.fscache=true
+		core.symlinks=false
+		pull.rebase=false
+		credential.helper=manager
+		user.email=navaraj.tester@gmail.com
+		user.name=navarajjavvaji
+
+		Other wise configure the git
+
+		git config --global user.email "navaraj.tester@gmail.com"
+		git config --global user.name "navarajjavvaji"
+
+2. Create a new repository on GitHub. (To avoid errors, do not initialize the new repository with README, license, or gitignore files. You can add these files after your project has been pushed to GitHub.) 
+
+3. Open Terminal , Change the current working directory to your local project 
+4. git init -> Initialize the local directory as a Git repository 
+5. git add . -> Add the files in your new local repository. This stages them for the first commit. 
+6. git commit -m “ Commit msg” => Commit the files that you've staged in your local repository. 
+
+		git commit -m  "VTS-123 [JN] first commit"
+
+7. git remote add origin https://github.com/navarajjavvaji/k8sjava.git => Sets the new remote 
+8. git remote -v => verifies the remote url 
+		origin  https://github.com/navarajjavvaji/k8sjava.git (fetch)
+		origin  https://github.com/navarajjavvaji/k8sjava.git (push)
+9. git push -u origin master => Push the changes in your local repository to GitHub
+
+Pull Request:
+
+1. cd .\gitrepos\
+2. git clone https://github.com/navarajjavvaji/demo.git
+3. cd .\demo\
+4. git status
+5. git add readme.txt
+6. git status
+7. git commit -m  "VTS-123 [JN] first commit "
+8. git push -u origin master
